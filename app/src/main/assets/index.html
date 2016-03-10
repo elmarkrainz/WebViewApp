@@ -1,0 +1,59 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+
+    function setTextinJS(text){
+        var x = document.getElementById("content").innerHTML;
+        document.getElementById("content").innerHTML=x + "<br>"+ text
+   }
+
+	function doJs(){
+	alert("js alert");
+	}
+
+	function doJava(){
+		Androidfunction.showToast("Toast from JS");
+	}
+
+
+	function makeToast(msg){
+		Androidfunction.showToast(msg);
+	}
+
+	function getDevId(){
+		setTextinJS(Androidfunction.getDevID())
+	}
+
+  </script>
+
+</head>
+<body>
+
+
+<h1>Demo: WebView JS to Native </h1>
+
+<p>This is a simple Html file.</p>
+
+<br>
+Communication between native platform and JS/Webview.
+
+<br><br>
+<input type="button" value="do Java" onclick="doJava()"/>
+
+
+<br><br>
+<input type="button" value="get Android Data" onclick="getDevId()"/>
+
+
+<!-- for testing
+<br>
+<input type="button" value="test" onclick="setTextinJS('test')"/>
+-->
+
+
+<br>
+<div id="content"></div>
+
+</body>
+</html>
